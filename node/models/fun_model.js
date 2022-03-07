@@ -5,7 +5,7 @@ const{ModeloPelicula}=require('./models');
 
 const getAllMovies = async(req,res)=>{
     try{
-        const Peliculas = await ModeloPelicula.findAll();
+        const Peliculas = await ModeloPelicula.findAll({attributes:['id_pelicula','titulo','content','inicio_creacion']});
         res.json(Peliculas);
     }catch(error){
         res.json({message: 'No se encontraron instancias'})
@@ -31,7 +31,7 @@ const getOneMovie = async(req,res)=>{
 
 const createOneMovie = async(req,res)=>{
     try{
-        await ModeloPelicula.create(req,body);
+        await ModeloPelicula.create(req.body);
         res.json({message: "Registro creado satisfactoriamente"});
     }catch(error){
         res.json({message:"No se ha realizado ningun registro"});

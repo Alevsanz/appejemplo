@@ -1,7 +1,8 @@
-const sequelize = require('sequelize');
+const {Sequelize} = require('sequelize');
 
-const database = new sequelize.Sequelize('peliculas','root','',{
-    host: 'localhost',
+const database = new Sequelize('peliculas','root','',{
+    host: '127.0.0.1',
+    port:'3306',
     dialect: 'mysql'
 });
 

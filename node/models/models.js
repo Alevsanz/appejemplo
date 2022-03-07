@@ -9,9 +9,12 @@ const {database} = require('../database/db');
 
 //generar una instancia del modelo.
 
-const ModeloPelicula = database.define('Pelicula',{
-    titulo: {type: DataTypes.STRING},
-    content: {type: DataTypes.STRING}
+const ModeloPelicula = database.define('entretenimientos',{
+    "id_pelicula": {type: DataTypes.INTEGER},
+    "titulo": {type: DataTypes.STRING},
+    "content": {type: DataTypes.STRING},
+    "inicio_creacion": {type: DataTypes.DATE}
+
 })
 
 //console.log(ModeloPelicula);

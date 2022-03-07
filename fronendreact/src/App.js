@@ -13,7 +13,7 @@ function App() {
       </div>
       <BrowserRouter>
       <Routes>
-        <Route path = '/' element = {<ComponenteMostrarPelicula/>}/>
+        <Route path = '/' element = {<ComponenteMostrarPelicula />}/>
       </Routes>
       </BrowserRouter>
     </div>

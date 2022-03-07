@@ -3,13 +3,13 @@ import {useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 
 
-const URL = 'http://localhost:4000/movie/'
+const URL = 'http://localhost:4000/movie';
 
 
 const ComponenteMostrarPelicula = ()=>{
     const [movies, setMovie] = useState([])
     useEffect(()=>{
-        getMovies()
+        getMovies();
     },[]);
 
     const getMovies = async()=>{
@@ -39,20 +39,21 @@ const ComponenteMostrarPelicula = ()=>{
                             </tr>
                         </thead>
                         <tbody>
-                            {movies.map((movie)=>{
-                                <tr key={movie.id}>
+                            {movies.map((movie)=>(
+                                <tr key={movie.id_pelicula}>
 
-                                    <td>{movie.title}</td>
+                                    <td>{movie.titulo}</td>
                                     <td>{movie.content}</td>
-                                    <td><Link to={`/edit/${movie.id}`} className='btn btn-info'>Editar</Link>
-                                    <button onClick={deleteMovie(movie.id)} className='btn btn-danger'>Delete</button>
+                                
+                                    <td><Link to={`/edit/${movie.id_pelicula}`} className='btn btn-info'>Editar</Link>
+                                    <button onClick={deleteMovie(movie.id_pelicula)} className='btn btn-danger'>Delete</button>
 
                                     </td>
                                 
                                 </tr>
 
 
-                            })}
+                            ))}
                         </tbody>
 
                     </table>
